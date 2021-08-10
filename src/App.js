@@ -7,7 +7,11 @@ class Header extends Component {
     return (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
-        <h1 className="App-title">hi</h1>
+        <h1 className="App-title">{this.props.title}</h1>
+        <div>{this.props.num}</div>
+        <div>{JSON.stringify(this.props.myObj)}</div>
+        <div>{this.props.myArr[2]}</div>
+        <div>{this.props.myFunc(10,20)}</div>
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -25,9 +29,16 @@ class Header extends Component {
 }
 
 function App() {
+  const add = (a,b) => a+b;
   return (
     <div className="App">
-      <Header/>
+      <Header title={"Hello1 from App"} num={3}
+      myFunc={add}
+      myArr={[1,2,3]} 
+      myObj={{
+        a: 5,
+        b: 6,
+      }}/>
     </div>
   );
 }
