@@ -1,5 +1,6 @@
 import './App.css';
 import MyHeader from './components/Header';
+import Counter from './components/Counter';
 
 
 function App() {
@@ -13,6 +14,8 @@ function App() {
         a: 5,
         b: 6,
       }}/>
+      <Counter initialCount={0}/>
+      <Counter initialCount={100}/>
     </div>
   );
 }
